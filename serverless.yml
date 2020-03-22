@@ -16,10 +16,18 @@ provider:
 # The `functions` block defines what code to deploy
 functions:
   helloWorld:
-    handler: handler.helloWorld
+    handler: index.helloWorld
     # The `events` block defines how to trigger the handler.helloWorld code
     events:
       - http:
           path: hello-world
+          method: get
+          cors: true
+  helloMoon:
+    handler: index.helloMoon
+    # The `events` block defines how to trigger the handler.helloMoon code
+    events:
+      - http:
+          path: hello-moon
           method: get
           cors: true
